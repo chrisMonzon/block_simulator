@@ -40,7 +40,6 @@ void reshape(int width, int height){
   glViewport(0, 0, w, h);
 
   float aspect = (float) w / (float) h, zNear = 0.1, zFar = 99.0 ;
-  // float aspect = (float) 750 / (float) h, zNear = 0.1, zFar = 99.0 ;
   // I am changing the projection matrix to fit with the new window aspect ratio
   if (useGlu) projection = glm::perspective(glm::radians(fovy),aspect,zNear,zFar) ; 
   else {
@@ -153,7 +152,6 @@ void keyboard(unsigned char key, int x, int y) {
       // std::cout << "currz = " << numobjects << std::endl;
       if (numobjects > 1 && visObjects != 0) {
         if (currz == 0 && visObjects ==  1) {
-          // visObjects--;
           // numobjects--;
           visObjects = 0;
           for (int i = 0; i < maxobjects; ++i) {
@@ -476,7 +474,7 @@ int main(int argc, char* argv[]) {
   glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH);
 #endif
   glutInitWindowSize(750, 500);
-  glutCreateWindow("HW2: Scene Viewer");
+  glutCreateWindow("Block Simulator");
 
 #ifndef __APPLE__ // GLew not needed on OSX systems
   GLenum err = glewInit() ; 

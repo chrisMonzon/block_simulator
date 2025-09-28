@@ -5,6 +5,8 @@ INCFLAGS = -I./glm-0.9.7.1 -I/opt/local/include -I./include/
 LDFLAGS = -framework GLUT -framework OpenGL -L/opt/homebrew/lib \
   -L"/System/Library/Frameworks/OpenGL.framework/Libraries" \
   -lGL -lGLU -lm -lstdc++ -lfreeimage
+CFLAGS += -arch arm64
+LDFLAGS += -arch arm64
 else
 CFLAGS = -g -DGL_GLEXT_PROTOTYPES
 INCFLAGS = -I./glm-0.9.7.1 -I./include/ -I/usr/X11R6/include -I/sw/include \
